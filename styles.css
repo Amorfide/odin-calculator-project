@@ -21,6 +21,8 @@ button {
     width: 208px;
     background-color: azure;
     margin-bottom: 2px;
+    word-wrap: break-word;
+    font-size: 25px;
 }
 
 input{
