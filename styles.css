@@ -1,0 +1,45 @@
+body, html {
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#button-area {
+    width: 212px;
+}
+
+button {
+    width: 50px;
+    height: 40px;
+}
+
+#display-area {
+    border: 1px solid grey;
+    height: 50px;
+    width: 208px;
+    background-color: azure;
+    margin-bottom: 2px;
+}
+
+input{
+    height: 45px;
+    width: 200px;
+}
+
+.calculator-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#button-container{
+    display: flex;
+}
+
+#operators{
+    display: flex;
+    flex-direction: column;
+}
