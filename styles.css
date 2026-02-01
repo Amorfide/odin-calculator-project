@@ -3,31 +3,7 @@ body, html {
     margin: 0;
     display: flex;
     justify-content: center;
-    align-items: center;
-}
-
-#button-area {
-    width: 212px;
-}
-
-button {
-    width: 50px;
-    height: 40px;
-}
-
-#display-area {
-    border: 1px solid grey;
-    height: 50px;
-    width: 208px;
-    background-color: azure;
-    margin-bottom: 2px;
-    word-wrap: break-word;
-    font-size: 25px;
-}
-
-input{
-    height: 45px;
-    width: 200px;
+    align-items: flex-start;
 }
 
 .calculator-container {
@@ -35,13 +11,38 @@ input{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 20px;
+    background-color: grey;
+    border: 2px solid black;
+    margin: auto;
 }
 
-#button-container{
+#display-area {
     display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    border: 2px solid black;
+    height: 50px;
+    width: 98%;
+    background-color: green;
+    margin-bottom: 2%;
+    font-size: 45px;
+}
+
+button {
+    width: 50px;
+    height: 40px;
+    border-radius: 10px;
+    margin: 1px;
 }
 
 #operators{
     display: flex;
     flex-direction: column;
+}
+
+#button-area {
+    border: 2px solid darkgray;
+    padding: 10px;
+    border-radius: 10px;
 }
