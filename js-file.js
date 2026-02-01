@@ -11,12 +11,14 @@ btnContainer.addEventListener("click", (event) => {
         currentValue += event.target.textContent;
         screen.textContent += event.target.textContent;
     }
+
     if(event.target.id === "operator"){
         a = Number(currentValue);
         operator = event.target.textContent;
         currentValue = "";
         screen.textContent += event.target.textContent;
     }
+
     if(event.target.id === "equals"){
         const b = Number(currentValue);
         let result;
@@ -39,4 +41,3 @@ function add(a, b){
 function subtract(a, b){
     return a - b;
 }
-
