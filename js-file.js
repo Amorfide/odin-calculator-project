@@ -36,6 +36,7 @@ function operate(a, operator, b){
 
 let operation = false;
 
+// check for clicks in button area of calculator, and updates screen based on button pressed
 container.addEventListener("click", (event) => {
     if(event.target.classList.contains("number")){
         if(operation === true){
@@ -45,13 +46,15 @@ container.addEventListener("click", (event) => {
         screen.textContent += event.target.textContent;
     }
 
+    // store number before pressing operator as a
     if(event.target.classList.contains("operator")){
         operator = event.target.textContent;
         operation = true;
         a = Number(screen.textContent);
         screen.textContent = event.target.textContent;
     }
-
+    
+    // store number after operator and before equals as b, to perform operation
     if(event.target.classList.contains("equals")){
         b = Number(screen.textContent);
         screen.textContent = String(operate(a, operator, b));
