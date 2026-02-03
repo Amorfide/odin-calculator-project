@@ -36,31 +36,50 @@ function operate(a, operator, b){
 
 let operation = false;
 
-// check for clicks in button area of calculator, and updates screen based on button pressed
+// enabling state control using boolean on the operator selected
 container.addEventListener("click", (event) => {
     if(event.target.classList.contains("number")){
+
         if(operation === true){
             operation = false;
             screen.textContent = "";
         }
+
         screen.textContent += event.target.textContent;
     }
 
-    // store number before pressing operator as a
+    // enable chain calculation, updating a each time an operator is selected
     if(event.target.classList.contains("operator")){
+
+        if(a !== null && operator !== null && !operation){
+            b = Number(screen.textContent);
+            a = operate(a, operator, b);
+            screen.textContent = a;
+        }else{
+            a = Number(screen.textContent);
+        }
+        
         operator = event.target.textContent;
         operation = true;
-        a = Number(screen.textContent);
         screen.textContent = event.target.textContent;
     }
     
-    // store number after operator and before equals as b, to perform operation
+    // enable result to show on screen when a and operator hold some value.
     if(event.target.classList.contains("equals")){
-        b = Number(screen.textContent);
-        screen.textContent = String(operate(a, operator, b));
+
+        if(a !== null && operator !== null){
+
+            b = Number(screen.textContent);
+            const result = operate(a, operator, b);
+            screen.textContent = result;
+
+            a = result;
+            operator = null;
+            operation = true;
+        }
     }
 })
 
-let a;
-let b;
-let operator;
+let a = null;
+let b = null;
+let operator = null;
