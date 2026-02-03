@@ -61,7 +61,8 @@ container.addEventListener("click", (event) => {
         
         operator = event.target.textContent;
         operation = true;
-        screen.textContent = event.target.textContent;
+        screen.textContent = a;
+        screen.textContent += event.target.textContent;
     }
     
     // enable result to show on screen when a and operator hold some value.
