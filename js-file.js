@@ -38,6 +38,23 @@ let operation = false;
 
 // enabling state control using boolean on the operator selected
 container.addEventListener("click", (event) => {
+
+    if (event.target.classList.contains("period")) {
+
+        if (operation === true) {
+            operation = false;
+            screen.textContent = "";
+        }
+
+        if (screen.textContent.includes(".")) return;
+
+        if (screen.textContent === "") {
+            screen.textContent = "0";
+        }
+
+        screen.textContent += ".";
+    }
+
     if(event.target.classList.contains("number")){
 
         if(operation === true){
@@ -55,7 +72,7 @@ container.addEventListener("click", (event) => {
         if (operation && operator !== null) {
             operator = newOperator;
 
-            screen.textContent = screen.textContent.replace(/[+\-*/]$/,newOperator);
+            screen.textContent = screen.textContent.replace(/[+\-*/]$/, newOperator);
             return;
         }
 
