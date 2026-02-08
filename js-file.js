@@ -1,6 +1,11 @@
 const container = document.getElementById("button-container");
 const screen = document.querySelector(".screen");
 
+const btnUnused = document.getElementsByClassName("unused");
+for(let i=0; i<btnUnused.length; i++){
+    btnUnused[i].disabled = true;
+}
+
 function add(a, b){
     return a + b;
 }
@@ -39,7 +44,14 @@ let operation = false;
 // enabling state control using boolean on the operator selected
 container.addEventListener("click", (event) => {
 
-    if (event.target.classList.contains("period")) {
+    if(event.target.classList.contains("clear")){
+        screen.textContent = "";
+        a = null;
+        b = null;
+        operator = null;
+    }
+
+    if(event.target.classList.contains("period")) {
 
         if (operation === true) {
             operation = false;
