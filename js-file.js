@@ -50,6 +50,14 @@ container.addEventListener("click", (event) => {
 
     // enable chain calculation, updating a each time an operator is selected
     if(event.target.classList.contains("operator")){
+        const newOperator = event.target.textContent;
+
+        if (operation && operator !== null) {
+            operator = newOperator;
+
+            screen.textContent = screen.textContent.replace(/[+\-*/]$/,newOperator);
+            return;
+        }
 
         if(a !== null && operator !== null && !operation){
             b = Number(screen.textContent);
