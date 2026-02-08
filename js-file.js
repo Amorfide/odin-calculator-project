@@ -7,19 +7,19 @@ for(let i=0; i<btnUnused.length; i++){
 }
 
 function add(a, b){
-    return a + b;
+    return (a + b).toString().slice(0,9);
 }
 
 function subtract(a, b){
-    return a - b;
+    return (a - b).toString().slice(0,9);
 }
 
 function multiply(a, b){
-    return a * b;
+    return (a * b).toString().slice(0,9);
 }
 
 function divide(a, b){
-    return a / b;
+    return (a / b).toString().slice(0,9);
 }
 
 function operate(a, operator, b){
@@ -68,7 +68,9 @@ container.addEventListener("click", (event) => {
     }
 
     if(event.target.classList.contains("number")){
-
+        if(screen.textContent.length === 8){
+            return;
+        }
         if(operation === true){
             operation = false;
             screen.textContent = "";
