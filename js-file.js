@@ -68,6 +68,9 @@ container.addEventListener("click", (event) => {
     // enable result to show on screen when a and operator hold some value.
     if(event.target.classList.contains("equals")){
 
+        if(operation){
+            return;
+        }
         if(a !== null && operator !== null){
 
             b = Number(screen.textContent);
